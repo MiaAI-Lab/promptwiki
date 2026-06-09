@@ -1,0 +1,15 @@
+services:
+  promptwiki:
+    build: .
+    container_name: promptwiki
+    restart: unless-stopped
+    ports:
+      - "3301:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=file:/app/data/promptwiki.db
+    volumes:
+      - promptwiki_data:/app/data
+
+volumes:
+  promptwiki_data:

@@ -1,0 +1,13 @@
+node_modules
+.git
+.gitignore
+.env
+.env.local
+dev.db
+prisma/dev.db
+*.db
+.tsbuildinfo
+next-env.d.ts
+.idea
+.vscode
+*.swp
