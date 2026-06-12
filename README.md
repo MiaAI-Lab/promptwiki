@@ -2,6 +2,9 @@
 
 A lightweight, self-hosted wiki for managing, organizing, and reusing LLM prompts. Run it locally or on your network with Docker.
 
+
+<a href='https://ko-fi.com/Z8Z3SPLOD' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
 PromptWiki gives you a central place to store your prompts — with search, categories, version history, one-click copy, and import/export. No cloud dependency, no subscription, no data leaving your network.
 
 ## Features
