@@ -207,3 +207,6 @@ docker compose up --build
 ## License
 
 MIT
+## Import regression tests
+
+With Bun installed, run `bun test tests/import.test.mjs`. These tests exercise the import route using in-memory database and HTTP response doubles, without touching your SQLite database. They cover duplicates within an upload, updating duplicates, existing records, and repeated imports.
