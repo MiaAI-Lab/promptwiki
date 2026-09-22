@@ -100,9 +100,11 @@ export async function POST(request: NextRequest) {
           results.updated++;
         } else {
           // Create new prompt
-          await prisma.prompt.create({
+          const created = await prisma.prompt.create({
             data: promptDataObj,
           });
+          // Later entries in this upload must see successful earlier imports.
+          existingPrompts.set(dedupKey, created.id);
 
           results.imported++;
         }
