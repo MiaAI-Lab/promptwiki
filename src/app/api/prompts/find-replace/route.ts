@@ -1,29 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { parseBody } from "@/lib/body-limit";
+import { replaceAll } from "@/lib/replace-all";
 
 const VALID_FIELDS = ["title", "content", "description"] as const;
 type Field = (typeof VALID_FIELDS)[number];
-
-function replaceAll(text: string, find: string, replace: string, caseSensitive: boolean): string {
-  if (!caseSensitive) {
-    const lower = text.toLowerCase();
-    const findLower = find.toLowerCase();
-    let result = "";
-    let i = 0;
-    while (i < text.length) {
-      const idx = lower.indexOf(findLower, i);
-      if (idx === -1) {
-        result += text.slice(i);
-        break;
-      }
-      result += text.slice(i, idx) + replace;
-      i = idx + find.length;
-    }
-    return result;
-  }
-  return text.split(find).join(replace);
-}
 
 function matchesInField(value: string | null, find: string, caseSensitive: boolean): boolean {
   if (!value) return false;
